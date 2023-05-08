@@ -6,6 +6,8 @@ import { useState } from 'react';
 
 function App() {
 
+  const [cartNum, setCartNum] = useState(0);
+  const [cartProducts, setCartProducts] = useState([]);
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -116,10 +118,37 @@ function App() {
          amount: 0,
     }
   ]);
+
+  function refreshCart() {
+    let newProducts = products.filter((product) => product.amount > 0);
+    setCartProducts(newProducts);
+  }
+
+  function addToCart(id) {
+    setCartNum(cartNum + 1);
+    products.forEach((product) => {
+      if (product.id === id) {
+        product.amount++;
+      }
+    });
+    refreshCart();
+  }
+
+  function removeFromCart(id) {
+    products.forEach((product) => {
+      if (product.id === id) {
+        if (product.amount > 0) {
+          product.amount--;
+          setCartNum(cartNum - 1);
+        }
+      }
+    });
+    refreshCart();
+  }
   return (
     <div className="App">
-      <NavBar/>
-      <Products products={products}/>
+      <NavBar cartNum={cartNum}/>
+      <Products products={products} onAdd={addToCart} onRemove={removeFromCart}/>
 
     </div>
   );

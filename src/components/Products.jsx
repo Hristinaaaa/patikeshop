@@ -1,7 +1,7 @@
 import React from 'react'
 import OneProduct from './OneProduct'
 
-const Products = ({products}) => {
+const Products = ({products, onAdd, onRemove}) => {
   return (
     <div className="all-products">
         {products.map((product) => {
@@ -9,6 +9,8 @@ const Products = ({products}) => {
         return <OneProduct
          product={product}
          key={product.id}
+         onAdd={onAdd}
+         onRemove={onRemove}
          />
         })}
        
