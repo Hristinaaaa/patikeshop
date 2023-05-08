@@ -174,13 +174,13 @@ a {
   width: 500px;
   height: fit-content;
   border-radius: 20px;
-  background-color: rgb(196, 158, 133);
+  background-color: rgb(179, 168, 122);
   padding: 20px;
   margin: 20px;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  border-color: rgb(107,75,62);
+  border-color: rgb(218, 195, 186);
   border-width: 3px;
   border-style: solid;
 }
@@ -211,12 +211,12 @@ td {
 .container{
   width: 100%;
   height: 100%;
-  background-color:rgb(255, 214, 175) ;
+  background-color:rgb(159, 188, 199) ;
   margin-bottom: 0%;
   display: flex;
 }
 .empty{
-  background-color:rgb(255, 214, 175) ;
+  background-color:rgb(159, 188, 199) ;
   display: flex;
   width: 100%;
   height: 100vh;

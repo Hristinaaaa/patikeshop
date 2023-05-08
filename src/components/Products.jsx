@@ -11,6 +11,7 @@ const Products = ({products, onAdd, onRemove}) => {
          key={product.id}
          onAdd={onAdd}
          onRemove={onRemove}
+         inCart={1}
          />
         })}
        
